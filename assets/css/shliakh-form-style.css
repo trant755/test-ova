@@ -1,0 +1,167 @@
+.shliakh-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.fildset {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+.fildset-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.fildset__title {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.margin-bottom {
+  margin-bottom: 32px;
+}
+
+.shliakh-form__input-label {
+  width: 100%;
+}
+
+.shliakh-form__input {
+  width: 100%;
+  padding: 8px;
+
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.shliakh-form__input-label--file {
+  width: 100%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 150px;
+
+  border: 2px dashed #000;
+}
+
+.shliakh-form__input-label--file p {
+  margin: 0;
+}
+
+.shliakh-form__input--file {
+  display: none;
+}
+
+.form_page_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 32px;
+}
+
+.form-alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px;
+  width: 100%;
+
+  font-size: 12px;
+
+  gap: 6px;
+
+  background-color: #fff4d7;
+}
+
+.form-alert p {
+  margin: 0;
+}
+.form-alert .warning {
+  color: red;
+}
+
+.form-alert--margin-top-minus {
+  margin-top: -16px;
+  align-items: center;
+}
+
+.add-declaration__title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  font-size: 14px;
+}
+
+.add-declaration__subtitle {
+  font-size: 12px;
+  color: red;
+}
+
+.file-input-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.form_page_button {
+  padding: 32px 0;
+}
+
+.shlyah-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+
+  padding: 12px 32px;
+  border: 0;
+
+  font-size: 14px;
+
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.shlyah-btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+.disabled:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.submit__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 32px 0;
+}
+
+.display-none {
+  display: none;
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./assets/css/shliakh-form-style.css" />
+
+    <div class="form_page_info fildset">
+      <form id="main-form" class="shliakh-form">
+        <div class="object-data__wrapper fildset margin-bottom">
+          <h2 class="fildset__title">Вкажіть дані про субʼєкт</h2>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="organization-name"
+              class="shliakh-form__input"
+              placeholder="* Назва оганізації"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="pib-director"
+              class="shliakh-form__input"
+              placeholder="* ПІБ керівника повністю"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="director-position"
+              class="shliakh-form__input"
+              placeholder="* Найменування посади керівника"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="organization-type"
+              class="shliakh-form__input"
+              placeholder="* Організаційно-правова форма господарювання (ФОП, ТОВ і т.д.)"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="number"
+              name="organization-code"
+              class="shliakh-form__input"
+              placeholder="* Код ЄРДПОУ/ІПН"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="organization-adress"
+              class="shliakh-form__input"
+              placeholder="* Адреса субʼєкта господарювання"
+            />
+          </label>
+
+          <div class="organization-contact-wrapper fildset-flex margin-bottom">
+            <label class="shliakh-form__input-label">
+              <input
+                type="tel"
+                name="organization-tel"
+                class="shliakh-form__input"
+                placeholder="* +38(___)_______"
+              />
+            </label>
+
+            <label class="shliakh-form__input-label">
+              <input
+                type="mail"
+                name="organization-mail"
+                class="shliakh-form__input"
+                placeholder="* Електронна пошта підприємства"
+              />
+            </label>
+          </div>
+          <h3 class="fildset__title">Бажана кількість днів</h3>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="number"
+              name="days-count"
+              class="shliakh-form__input"
+              placeholder="* дд"
+            />
+          </label>
+        </div>
+        <div class="contact-person__wrapper fildset margin-bottom">
+          <h2 class="fildset__title">Вкажіть дані контактної особи</h2>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="text"
+              name="pib-contact-person"
+              class="shliakh-form__input"
+              placeholder="* ПІБ контактної особи"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="tel"
+              name="tel-contact-person"
+              class="shliakh-form__input"
+              placeholder="* +38(___)_______"
+            />
+          </label>
+
+          <label class="shliakh-form__input-label">
+            <input
+              type="number"
+              name="drivers-count"
+              class="shliakh-form__input"
+              placeholder="* Кількість водіїв"
+            />
+          </label>
+        </div>
+      </form>
+
+      <div class="drivers-form__container fildset display-none">
+        <div class="drivers-forms">
+          <form class="driver-form shliakh-form">
+            <div class="driver-wrapper fildset">
+              <h2 class="fildset__title">Дані водія</h2>
+              <div class="add-declaration_wrapper fildset">
+                <h3 class="add-declaration__title">
+                  <span>Додайте декларації</span>
+                  <span class="add-declaration__subtitle"
+                    >Важливо! Якщо ви ще не ввозили гуманітарну допомогу
+                    декларацію додавати не потрібно.</span
+                  >
+                </h3>
+
+                <label
+                  class="shliakh-form__input-label shliakh-form__input-label--file"
+                >
+                  <input
+                    type="file"
+                    name="declaration-file"
+                    class="shliakh-form__input shliakh-form__input--file"
+                  />
+                  <p class="add-file">
+                    <svg
+                      class="file-input-svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <title>Add-Stroke</title>
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g id="Add-Stroke">
+                          <rect
+                            id="Rectangle"
+                            fill-rule="nonzero"
+                            x="0"
+                            y="0"
+                            width="24"
+                            height="24"
+                          ></rect>
+                          <circle
+                            id="Oval"
+                            stroke="#0C0310"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            cx="12"
+                            cy="12"
+                            r="9"
+                          ></circle>
+                          <line
+                            x1="12"
+                            y1="9"
+                            x2="12"
+                            y2="15"
+                            id="Path"
+                            stroke="#0C0310"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></line>
+                          <line
+                            x1="9"
+                            y1="12"
+                            x2="15"
+                            y2="12"
+                            id="Path"
+                            stroke="#0C0310"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          ></line>
+                        </g>
+                      </g>
+                    </svg>
+                    <span>Додати файл</span>
+                  </p>
+                  <p class="file-added display-none">
+                    <svg
+                      class="file-input-svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 512 512"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <title>success</title>
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          id="add-copy"
+                          fill="#000000"
+                          transform="translate(42.666667, 42.666667)"
+                        >
+                          <path
+                            d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
+                            id="Shape"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <span>Файл додано: </span>
+                    <span class="file-name"></span>
+                  </p>
+                </label>
+                <div class="form-alert form-alert--margin-top-minus">
+                  <p>
+                    Заархівуйте Ваші декларації в ZIP або натисніть
+                    <a class="add-declaration__zip-link" href="#">ТУТ</a>
+                  </p>
+                </div>
+              </div>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="pib-driver"
+                  class="shliakh-form__input"
+                  placeholder="* ПІБ водія"
+                />
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="driver-passport-series"
+                  class="shliakh-form__input"
+                  placeholder="* Серія закордонного паспорта водія"
+                />
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="number"
+                  name="driver-passport-number"
+                  class="shliakh-form__input"
+                  placeholder="* Номер закордонного паспорта водія"
+                />
+              </label>
+
+              <div class="driver-bday__wrapper fildset-flex">
+                <label class="shliakh-form__input-label">
+                  <input
+                    type="number"
+                    name="driver-day"
+                    class="shliakh-form__input"
+                    placeholder="* дд"
+                  />
+                </label>
+                <label class="shliakh-form__input-label">
+                  <input
+                    type="number"
+                    name="driver-month"
+                    class="shliakh-form__input"
+                    placeholder="* мм"
+                  />
+                </label>
+                <label class="shliakh-form__input-label">
+                  <input
+                    type="number"
+                    name="driver-year"
+                    class="shliakh-form__input"
+                    placeholder="* рррр"
+                  />
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="drivers-files">
+          <form class="driver-files-form fildset">
+            <h3 class="fildset__title">Додайте архив з документами водія</h3>
+            <label
+              class="shliakh-form__input-label shliakh-form__input-label--file"
+            >
+              <input
+                type="file"
+                accept=".zip, .rar"
+                name="drivers-files"
+                class="shliakh-form__input shliakh-form__input--file"
+              />
+              <p class="add-file">
+                <svg
+                  class="file-input-svg"
+                  width="800px"
+                  height="800px"
+                  viewBox="0 0 24 24"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <title>Add-Stroke</title>
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g id="Add-Stroke">
+                      <rect
+                        id="Rectangle"
+                        fill-rule="nonzero"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="24"
+                      ></rect>
+                      <circle
+                        id="Oval"
+                        stroke="#0C0310"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        cx="12"
+                        cy="12"
+                        r="9"
+                      ></circle>
+                      <line
+                        x1="12"
+                        y1="9"
+                        x2="12"
+                        y2="15"
+                        id="Path"
+                        stroke="#0C0310"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      ></line>
+                      <line
+                        x1="9"
+                        y1="12"
+                        x2="15"
+                        y2="12"
+                        id="Path"
+                        stroke="#0C0310"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                      ></line>
+                    </g>
+                  </g>
+                </svg>
+                <span>Додати файл</span>
+              </p>
+              <p class="file-added display-none">
+                <svg
+                  class="file-input-svg"
+                  width="800px"
+                  height="800px"
+                  viewBox="0 0 512 512"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <title>success</title>
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="add-copy"
+                      fill="#000000"
+                      transform="translate(42.666667, 42.666667)"
+                    >
+                      <path
+                        d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
+                        id="Shape"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+                <span>Файл додано: </span>
+                <span class="file-name"></span>
+              </p>
+            </label>
+            <div class="form-alert form-alert--margin-top-minus">
+              <p>Допустимі розширення архівів: .zip .rar</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="form_page_buttons fildset">
+        <div class="form_page_button">
+          <button id="generate-klopotannya" class="shlyah-btn" type="button">
+            Згенерувати лист-клопотання
+          </button>
+          <a
+            href="https://diia.gov.ua/services/pidpisannya-dokumentiv"
+            id="pidpusaty-klopoyanya"
+            class="shlyah-btn"
+            >Підписати згенерований лист-клопотання</a
+          >
+        </div>
+
+        <div class="form-alert">
+          <p class="warning">
+            УВАГА! ЛИСТ-КЛОПОТАННЯ ПОВИНЕН БУТИ ПІДПИСАНИЙ КЕРІВНИКОМ
+            ОРГАНІЗАЦІЇ, УСТАНОВИ ТОЩО
+          </p>
+          <p class="warning">
+            УВАГА! ЯКЩО ЗАЯВА НЕ ГЕНЕРУЄТЬСЯ, ПЕРЕВІРТЕ ПРАВИЛЬНІСТЬ ВВЕДЕНИХ
+            ДАНИХ
+          </p>
+          <p>
+            Інструкція для підписання заяви КЕПом -
+            <a href="https://www.youtube.com/watch?v=hWrNI9chjHo"
+              >переглянути</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <form class="pidpusanuy-lust-form">
+        <div class="pidpusanuy-lust-form__wrapper fildset">
+          <h2 class="fildset__title">Додайте підписаний лист-клопотання</h2>
+          <label
+            class="shliakh-form__input-label shliakh-form__input-label--file"
+          >
+            <input
+              type="file"
+              name="pidpusanuy-lust-file"
+              accept=".p7s, .asics, .asice"
+              class="shliakh-form__input shliakh-form__input--file"
+            />
+            <p class="add-file">
+              <svg
+                class="file-input-svg"
+                width="800px"
+                height="800px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <title>Add-Stroke</title>
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Add-Stroke">
+                    <rect
+                      id="Rectangle"
+                      fill-rule="nonzero"
+                      x="0"
+                      y="0"
+                      width="24"
+                      height="24"
+                    ></rect>
+                    <circle
+                      id="Oval"
+                      stroke="#0C0310"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      cx="12"
+                      cy="12"
+                      r="9"
+                    ></circle>
+                    <line
+                      x1="12"
+                      y1="9"
+                      x2="12"
+                      y2="15"
+                      id="Path"
+                      stroke="#0C0310"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    ></line>
+                    <line
+                      x1="9"
+                      y1="12"
+                      x2="15"
+                      y2="12"
+                      id="Path"
+                      stroke="#0C0310"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    ></line>
+                  </g>
+                </g>
+              </svg>
+              <span>Додати файл</span>
+            </p>
+            <p class="file-added display-none">
+              <svg
+                class="file-input-svg"
+                width="800px"
+                height="800px"
+                viewBox="0 0 512 512"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <title>success</title>
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g
+                    id="add-copy"
+                    fill="#000000"
+                    transform="translate(42.666667, 42.666667)"
+                  >
+                    <path
+                      d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
+                      id="Shape"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+              <span>Файл додано: </span>
+              <span class="file-name"></span>
+            </p>
+          </label>
+          <div class="form-alert form-alert--margin-top">
+            <p>Допустимі розширення підписаних листів: .p7s .asics .asice</p>
+          </div>
+        </div>
+      </form>
+
+      <div class="submit__wrapper">
+        <button id="shlikh-submit" class="shlyah-btn" type="button">
+          Надіслати
+        </button>
+      </div>
+    </div>
+
+    <script src="./assets/js/shliakh.js" type="module"></script>
+  </body>
+</html>
