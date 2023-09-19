@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 32px;
+  gap: 44px;
 }
 
 .fildset-flex {
@@ -33,19 +33,30 @@
 
 .shliakh-form__input-label {
   width: 100%;
+  position: relative;
 }
 
 .shliakh-form__input {
   width: 100%;
   padding: 8px;
+  font-size: 14px;
 
   border: none;
   border-bottom: 1px solid #000;
 }
 
+.shliakh-form__input:invalid {
+  border-color: red;
+}
+
+.shliakh-form__input:valid {
+  border-color: green;
+}
+
 .shliakh-form__input-label--file {
   width: 100%;
   cursor: pointer;
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -56,12 +67,39 @@
   border: 2px dashed #000;
 }
 
+.shliakh-form__input-label--file:invalid {
+  border-color: red;
+}
+
+.shliakh-form__input-label--file:valid {
+  border-color: green;
+}
+
 .shliakh-form__input-label--file p {
   margin: 0;
 }
 
 .shliakh-form__input--file {
   display: none;
+}
+
+.file-added-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.input-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 2px;
+  font-size: 12px;
+  color: red;
 }
 
 .form_page_button {
@@ -129,7 +167,7 @@
   align-items: center;
   text-decoration: none;
   color: #000;
-
+  width: 100%;
   padding: 12px 32px;
   border: 0;
 
@@ -160,6 +198,89 @@
   align-items: center;
   width: 100%;
   padding: 32px 0;
+}
+
+.input-delete-file {
+  background-color: transparent;
+
+  border: 3px solid #000;
+  border-radius: 50px;
+  padding: 4px 8px;
+
+  font-size: 12px;
+}
+
+/* media max 768px */
+
+@media (max-width: 768px) {
+  .shliakh-form {
+    gap: 16px;
+  }
+
+  .fildset {
+    gap: 16px;
+  }
+
+  .fildset-flex {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .fildset__title {
+    font-size: 16px;
+  }
+
+  .shliakh-form__input-label--file {
+    height: 100px;
+  }
+
+  .shliakh-form__input-label--file p {
+    font-size: 12px;
+  }
+
+  .form_page_button {
+    gap: 16px;
+  }
+
+  .shlyah-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .submit__wrapper {
+    padding: 16px 0;
+  }
+}
+
+.modall-success-mail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modall-success-mail__container {
+  position: relative;
+
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 32px;
+
+  background-color: #fff;
+  border-radius: 8px;
 }
 
 .display-none {

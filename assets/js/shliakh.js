@@ -123,7 +123,7 @@ submitBtn.addEventListener("click", async (e) => {
 
   try {
     const response = await fetch(
-      "https://dopomoha.carpathia.gov.ua/api/api/shliakh/create-shliakh",
+      "http://192.168.0.103:4080/api/api/shliakh/send-shliakh",
       {
         method: "POST",
         headers: {
