@@ -8,198 +8,443 @@
   <body>
     <link rel="stylesheet" href="./assets/css/shliakh-form-style.css" />
 
-    <div class="form_page_info fildset">
-      <form id="main-form" class="shliakh-form">
-        <div class="object-data__wrapper fildset margin-bottom">
-          <h2 class="fildset__title">Вкажіть дані про субʼєкт</h2>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="organizationName"
-              class="shliakh-form__input"
-              placeholder="* Назва оганізації"
-              pattern=".{4,500}"
-              required
-              title="Введіть текст українськими або латинськими літерами, через пробіли або дефіси, дозволяються подвійні лапки та цифри. Мінімум 3 символи, максимум 500"
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="pibDirector"
-              class="shliakh-form__input"
-              placeholder="* ПІБ керівника повністю"
-              pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
-              title="Введіть повністю ПІБ українськими літерами, кожне слово з великої літери"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="directorPosition"
-              class="shliakh-form__input"
-              placeholder="* Найменування посади керівника"
-              pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
-              title="Введіть текст українськими літерами, дозволяються пробіли, дефіси, крапки та коми. Мінімум 3 символи, максимум 500"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="organizationType"
-              class="shliakh-form__input"
-              placeholder="* Організаційно-правова форма господарювання (ФОП, ТОВ і т.д.)"
-              pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
-              title="Введіть повністю українськими або латинськими літерами, допускаються пробіли та дефіси. Мінімум 3 символи, максимум 50"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="organizationCode"
-              class="shliakh-form__input"
-              placeholder="* Код ЄРДПОУ/ІПН"
-              pattern="\d{8}|\d{10}"
-              title="Введіть 8 цифр для ЄДРПОУ чи 10 цифр для ІПН"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="organizationAdress"
-              class="shliakh-form__input"
-              placeholder="* Адреса субʼєкта господарювання"
-              pattern='[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\d\s\\\-`\/",.]{3,200}'
-              title="Введіть текст українськими або латинськими літерами, через пробіли або дефіси, дозволяються подвійні лапки та цифри, крапки та коми. Мінімум 3 символи, максимум 200"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-
-          <div class="organization-contact-wrapper fildset-flex margin-bottom">
-            <label class="shliakh-form__input-label">
-              <input
-                type="tel"
-                name="organizationTel"
-                class="shliakh-form__input"
-                placeholder="* +38(___)_______"
-                pattern="\+38\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                title="Номер телефону в форматі +38 та десять цифр"
-                required
-              />
-              <p class="input-error"></p>
-            </label>
-
-            <label class="shliakh-form__input-label">
-              <input
-                type="mail"
-                name="organizationMail"
-                class="shliakh-form__input"
-                placeholder="* Електронна пошта підприємства"
-                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                title="Формат електронної пошти: mymail@mail.com"
-                required
-              />
-              <p class="input-error"></p>
-            </label>
-          </div>
-          <h3 class="fildset__title">Бажана кількість днів</h3>
-
-          <label class="shliakh-form__input-label">
-            <input
-              type="number"
-              name="daysCount"
-              class="shliakh-form__input"
-              placeholder="* дд"
-              min="1"
-              max="180"
-              title="Введіть від 1 до 180 днів"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
+    <div class="content form_page _flex">
+      <div class="form_page_body">
+        <div class="form_page_return_wrapper _flex _between _vcenter">
+          <a href="<?php echo get_site_url() ?>" class="form_page_return"
+            >Назад</a
+          >
+          <div class="ico_black_gerb"></div>
         </div>
-        <div class="contact-person__wrapper fildset margin-bottom">
-          <h2 class="fildset__title">Вкажіть дані контактної особи</h2>
 
-          <label class="shliakh-form__input-label">
-            <input
-              type="text"
-              name="pibContactPerson"
-              class="shliakh-form__input"
-              placeholder="* ПІБ контактної особи"
-              pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
-              title="Введіть ПІБ повністю українськими літерами, кожне слово з великої літери"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
+        <div class="form_page_info fildset">
+          <form id="main-form" class="shliakh-form">
+            <div class="object-data__wrapper fildset margin-bottom">
+              <h2 class="fildset__title">Вкажіть дані про субʼєкт</h2>
 
-          <label class="shliakh-form__input-label">
-            <input
-              type="tel"
-              name="telContactPerson"
-              class="shliakh-form__input"
-              placeholder="* +38(___)_______"
-              pattern="\+38\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
-              title="Номер телефону в форматі +38 та десять цифр"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="organizationName"
+                  class="shliakh-form__input"
+                  placeholder="* Назва оганізації"
+                  pattern=".{4,500}"
+                  required
+                  title="Введіть текст українськими або латинськими літерами, через пробіли або дефіси, дозволяються подвійні лапки та цифри. Мінімум 3 символи, максимум 500"
+                />
+                <p class="input-error"></p>
+              </label>
 
-          <label class="shliakh-form__input-label">
-            <input
-              type="number"
-              name="driversCount"
-              class="shliakh-form__input"
-              placeholder="* Кількість водіїв"
-              min="1"
-              max="5"
-              title="Введіть кількість водіїв від 1 до 5"
-              required
-            />
-            <p class="input-error"></p>
-          </label>
-        </div>
-      </form>
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="pibDirector"
+                  class="shliakh-form__input"
+                  placeholder="* ПІБ керівника повністю"
+                  pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
+                  title="Введіть повністю ПІБ українськими літерами, кожне слово з великої літери"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
 
-      <div class="drivers-form__container fildset display-none">
-        <div class="drivers-forms">
-          <form class="driver-form shliakh-form">
-            <div class="driver-wrapper fildset">
-              <h2 class="fildset__title">Дані водія</h2>
-              <div class="add-declaration_wrapper fildset">
-                <h3 class="add-declaration__title">
-                  <span>Додайте декларації</span>
-                  <span class="add-declaration__subtitle"
-                    >Важливо! Якщо ви ще не ввозили гуманітарну допомогу
-                    декларацію додавати не потрібно.</span
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="directorPosition"
+                  class="shliakh-form__input"
+                  placeholder="* Найменування посади керівника"
+                  pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
+                  title="Введіть текст українськими літерами, дозволяються пробіли, дефіси, крапки та коми. Мінімум 3 символи, максимум 500"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="organizationType"
+                  class="shliakh-form__input"
+                  placeholder="* Організаційно-правова форма господарювання (ФОП, ТОВ і т.д.)"
+                  pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
+                  title="Введіть повністю українськими або латинськими літерами, допускаються пробіли та дефіси. Мінімум 3 символи, максимум 50"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="organizationCode"
+                  class="shliakh-form__input"
+                  placeholder="* Код ЄРДПОУ/ІПН"
+                  pattern="\d{8}|\d{10}"
+                  title="Введіть 8 цифр для ЄДРПОУ чи 10 цифр для ІПН"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="organizationAdress"
+                  class="shliakh-form__input"
+                  placeholder="* Адреса субʼєкта господарювання"
+                  pattern='[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\d\s\\\-`\/",.]{3,200}'
+                  title="Введіть текст українськими або латинськими літерами, через пробіли або дефіси, дозволяються подвійні лапки та цифри, крапки та коми. Мінімум 3 символи, максимум 200"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <div
+                class="organization-contact-wrapper fildset-flex margin-bottom"
+              >
+                <label class="shliakh-form__input-label">
+                  <input
+                    type="tel"
+                    name="organizationTel"
+                    class="shliakh-form__input"
+                    placeholder="* +38(___)_______"
+                    pattern="\+38\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    title="Номер телефону в форматі +38 та десять цифр"
+                    required
+                  />
+                  <p class="input-error"></p>
+                </label>
+
+                <label class="shliakh-form__input-label">
+                  <input
+                    type="mail"
+                    name="organizationMail"
+                    class="shliakh-form__input"
+                    placeholder="* Електронна пошта підприємства"
+                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                    title="Формат електронної пошти: mymail@mail.com"
+                    required
+                  />
+                  <p class="input-error"></p>
+                </label>
+              </div>
+              <h3 class="fildset__title">Бажана кількість днів</h3>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="number"
+                  name="daysCount"
+                  class="shliakh-form__input"
+                  placeholder="* дд"
+                  min="1"
+                  max="180"
+                  title="Введіть від 1 до 180 днів"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+            </div>
+            <div class="contact-person__wrapper fildset margin-bottom">
+              <h2 class="fildset__title">Вкажіть дані контактної особи</h2>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="text"
+                  name="pibContactPerson"
+                  class="shliakh-form__input"
+                  placeholder="* ПІБ контактної особи"
+                  pattern="[А-ЩЮ-ЯІЇЄҐа-щью-яіїєґa-zA-Z\s\-\.]{3,50}"
+                  title="Введіть ПІБ повністю українськими літерами, кожне слово з великої літери"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="tel"
+                  name="telContactPerson"
+                  class="shliakh-form__input"
+                  placeholder="* +38(___)_______"
+                  pattern="\+38\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                  title="Номер телефону в форматі +38 та десять цифр"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+
+              <label class="shliakh-form__input-label">
+                <input
+                  type="number"
+                  name="driversCount"
+                  class="shliakh-form__input"
+                  placeholder="* Кількість водіїв"
+                  min="1"
+                  max="5"
+                  title="Введіть кількість водіїв від 1 до 5"
+                  required
+                />
+                <p class="input-error"></p>
+              </label>
+            </div>
+          </form>
+
+          <div class="drivers-form__container fildset display-none">
+            <div class="drivers-forms">
+              <form class="driver-form shliakh-form">
+                <div class="driver-wrapper fildset">
+                  <h2 class="fildset__title">Дані водія</h2>
+                  <div class="add-declaration_wrapper fildset">
+                    <h3 class="add-declaration__title">
+                      <span>Додайте декларації</span>
+                      <span class="add-declaration__subtitle"
+                        >Важливо! Якщо ви ще не ввозили гуманітарну допомогу
+                        декларацію додавати не потрібно.</span
+                      >
+                    </h3>
+
+                    <label
+                      class="shliakh-form__input-label shliakh-form__input-label--file"
+                    >
+                      <input
+                        type="file"
+                        name="declarationFile"
+                        class="shliakh-form__input shliakh-form__input--file"
+                      />
+                      <p class="add-file">
+                        <svg
+                          class="file-input-svg"
+                          width="800px"
+                          height="800px"
+                          viewBox="0 0 24 24"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                          <title>Add-Stroke</title>
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                          >
+                            <g id="Add-Stroke">
+                              <rect
+                                id="Rectangle"
+                                fill-rule="nonzero"
+                                x="0"
+                                y="0"
+                                width="24"
+                                height="24"
+                              ></rect>
+                              <circle
+                                id="Oval"
+                                stroke="#0C0310"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                cx="12"
+                                cy="12"
+                                r="9"
+                              ></circle>
+                              <line
+                                x1="12"
+                                y1="9"
+                                x2="12"
+                                y2="15"
+                                id="Path"
+                                stroke="#0C0310"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              ></line>
+                              <line
+                                x1="9"
+                                y1="12"
+                                x2="15"
+                                y2="12"
+                                id="Path"
+                                stroke="#0C0310"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                              ></line>
+                            </g>
+                          </g>
+                        </svg>
+                        <span>Додати архів</span>
+                      </p>
+                      <div class="file-added-wrapper display-none">
+                        <p class="file-added">
+                          <svg
+                            class="file-input-svg"
+                            width="800px"
+                            height="800px"
+                            viewBox="0 0 512 512"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <title>success</title>
+                            <g
+                              id="Page-1"
+                              stroke="none"
+                              stroke-width="1"
+                              fill="none"
+                              fill-rule="evenodd"
+                            >
+                              <g
+                                id="add-copy"
+                                fill="#000000"
+                                transform="translate(42.666667, 42.666667)"
+                              >
+                                <path
+                                  d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
+                                  id="Shape"
+                                ></path>
+                              </g>
+                            </g>
+                          </svg>
+                          <span>Архів додано: </span>
+                          <span class="file-name"></span>
+                        </p>
+                        <button class="input-delete-file">
+                          Видалити архів
+                        </button>
+                      </div>
+                      <p class="input-error"></p>
+                    </label>
+                    <div class="form-alert form-alert--margin-top-minus">
+                      <p>
+                        Заархівуйте Ваші декларації в ZIP або натисніть
+                        <a class="add-declaration__zip-link" href="#">ТУТ</a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <label class="shliakh-form__input-label">
+                    <input
+                      type="text"
+                      name="pibDriver"
+                      class="shliakh-form__input"
+                      placeholder="* ПІБ водія"
+                      pattern="[А-ЩЬЮЯІЇЄҐ][а-щьюяіїєґ]+(\s[А-ЩЬЮЯІЇЄҐ][а-щьюяіїєґ]+){2,}"
+                      title="Введіть повністю ПІБ українськими літерами, кожне слово з великої літери"
+                      required
+                    />
+                    <p class="input-error"></p>
+                  </label>
+
+                  <label class="shliakh-form__input-label">
+                    <input
+                      type="text"
+                      name="driverPassportSeries"
+                      class="shliakh-form__input"
+                      placeholder="* Серія закордонного паспорта водія"
+                      pattern="[A-Z]{2}"
+                      title="2 великі літери латиницею"
+                      required
+                    />
+                    <p class="input-error"></p>
+                  </label>
+
+                  <label class="shliakh-form__input-label">
+                    <input
+                      type="text"
+                      name="driverPassportNumber"
+                      class="shliakh-form__input"
+                      placeholder="* Номер закордонного паспорта водія"
+                      pattern="[0-9]{6}"
+                      title="6 цифр без пробілів"
+                      required
+                    />
+                    <p class="input-error"></p>
+                  </label>
+
+                  <div class="driver-bday__wrapper fildset-flex">
+                    <label class="shliakh-form__input-label">
+                      <input
+                        type="number"
+                        name="driverDay"
+                        class="shliakh-form__input"
+                        placeholder="* дд"
+                        min="1"
+                        max="31"
+                        required
+                      />
+                      <p class="input-error"></p>
+                    </label>
+                    <label class="shliakh-form__input-label">
+                      <input
+                        type="number"
+                        name="driverMonth"
+                        class="shliakh-form__input"
+                        placeholder="* мм"
+                        min="1"
+                        max="12"
+                        required
+                      />
+                      <p class="input-error"></p>
+                    </label>
+                    <label class="shliakh-form__input-label">
+                      <input
+                        type="number"
+                        name="driverYear"
+                        class="shliakh-form__input"
+                        placeholder="* рррр"
+                        min="1900"
+                        max="2005"
+                        required
+                      />
+                      <p class="input-error"></p>
+                    </label>
+                  </div>
+
+                  <div
+                    class="driver-contact-wrapper fildset-flex margin-bottom"
                   >
-                </h3>
+                    <label class="shliakh-form__input-label">
+                      <input
+                        type="tel"
+                        name="driverTel"
+                        class="shliakh-form__input"
+                        placeholder="* Номер телефона водія 38ХХХХХХХХХХ"
+                        pattern="38\d{10}"
+                        title="Номер телефону в форматі 38 та десять цифр"
+                        required
+                      />
+                      <p class="input-error"></p>
+                    </label>
 
+                    <label class="shliakh-form__input-label">
+                      <input
+                        type="mail"
+                        name="driverMail"
+                        class="shliakh-form__input"
+                        placeholder="* Електронна пошта водія"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                        title="Формат електронної пошти: mymail@mail.com"
+                        required
+                      />
+                      <p class="input-error"></p>
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="drivers-files">
+              <form class="driver-files-form fildset">
+                <h3 class="fildset__title">
+                  Додайте архив з документами водія
+                </h3>
                 <label
                   class="shliakh-form__input-label shliakh-form__input-label--file"
                 >
                   <input
                     type="file"
-                    name="declarationFile"
+                    accept=".zip, .rar"
+                    name="driversFiles"
                     class="shliakh-form__input shliakh-form__input--file"
+                    required
                   />
                   <p class="add-file">
                     <svg
@@ -301,207 +546,72 @@
                   <p class="input-error"></p>
                 </label>
                 <div class="form-alert form-alert--margin-top-minus">
-                  <p>
-                    Заархівуйте Ваші декларації в ZIP або натисніть
-                    <a class="add-declaration__zip-link" href="#">ТУТ</a>
-                  </p>
+                  <p>Допустимі розширення архівів: .zip .rar</p>
                 </div>
-              </div>
-
-              <label class="shliakh-form__input-label">
-                <input
-                  type="text"
-                  name="pibDriver"
-                  class="shliakh-form__input"
-                  placeholder="* ПІБ водія"
-                  pattern="[А-ЩЬЮЯІЇЄҐ][а-щьюяіїєґ]+(\s[А-ЩЬЮЯІЇЄҐ][а-щьюяіїєґ]+){2,}"
-                  title="Введіть повністю ПІБ українськими літерами, кожне слово з великої літери"
-                  required
-                />
-                <p class="input-error"></p>
-              </label>
-
-              <label class="shliakh-form__input-label">
-                <input
-                  type="text"
-                  name="driverPassportSeries"
-                  class="shliakh-form__input"
-                  placeholder="* Серія закордонного паспорта водія"
-                  pattern="[A-Z]{2}"
-                  title="2 великі літери латиницею"
-                  required
-                />
-                <p class="input-error"></p>
-              </label>
-
-              <label class="shliakh-form__input-label">
-                <input
-                  type="text"
-                  name="driverPassportNumber"
-                  class="shliakh-form__input"
-                  placeholder="* Номер закордонного паспорта водія"
-                  pattern="[0-9]{6}"
-                  title="6 цифр без пробілів"
-                  required
-                />
-                <p class="input-error"></p>
-              </label>
-
-              <div class="driver-bday__wrapper fildset-flex">
-                <label class="shliakh-form__input-label">
-                  <input
-                    type="number"
-                    name="driverDay"
-                    class="shliakh-form__input"
-                    placeholder="* дд"
-                    min="1"
-                    max="31"
-                    required
-                  />
-                  <p class="input-error"></p>
-                </label>
-                <label class="shliakh-form__input-label">
-                  <input
-                    type="number"
-                    name="driverMonth"
-                    class="shliakh-form__input"
-                    placeholder="* мм"
-                    min="1"
-                    max="12"
-                    required
-                  />
-                  <p class="input-error"></p>
-                </label>
-                <label class="shliakh-form__input-label">
-                  <input
-                    type="number"
-                    name="driverYear"
-                    class="shliakh-form__input"
-                    placeholder="* рррр"
-                    min="1900"
-                    max="2005"
-                    required
-                  />
-                  <p class="input-error"></p>
-                </label>
-              </div>
-
-              <div class="driver-contact-wrapper fildset-flex margin-bottom">
-                <label class="shliakh-form__input-label">
-                  <input
-                    type="tel"
-                    name="driverTel"
-                    class="shliakh-form__input"
-                    placeholder="* Номер телефона водія 38ХХХХХХХХХХ"
-                    pattern="38\d{10}"
-                    title="Номер телефону в форматі 38 та десять цифр"
-                    required
-                  />
-                  <p class="input-error"></p>
-                </label>
-
-                <label class="shliakh-form__input-label">
-                  <input
-                    type="mail"
-                    name="driverMail"
-                    class="shliakh-form__input"
-                    placeholder="* Електронна пошта водія"
-                    pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                    title="Формат електронної пошти: mymail@mail.com"
-                    required
-                  />
-                  <p class="input-error"></p>
-                </label>
-              </div>
+              </form>
             </div>
-          </form>
-        </div>
-        <div class="drivers-files">
-          <form class="driver-files-form fildset">
-            <h3 class="fildset__title">Додайте архив з документами водія</h3>
-            <label
-              class="shliakh-form__input-label shliakh-form__input-label--file"
-            >
-              <input
-                type="file"
-                accept=".zip, .rar"
-                name="driversFiles"
-                class="shliakh-form__input shliakh-form__input--file"
-                required
-              />
-              <p class="add-file">
-                <svg
-                  class="file-input-svg"
-                  width="800px"
-                  height="800px"
-                  viewBox="0 0 24 24"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <title>Add-Stroke</title>
-                  <g
-                    id="Page-1"
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g id="Add-Stroke">
-                      <rect
-                        id="Rectangle"
-                        fill-rule="nonzero"
-                        x="0"
-                        y="0"
-                        width="24"
-                        height="24"
-                      ></rect>
-                      <circle
-                        id="Oval"
-                        stroke="#0C0310"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        cx="12"
-                        cy="12"
-                        r="9"
-                      ></circle>
-                      <line
-                        x1="12"
-                        y1="9"
-                        x2="12"
-                        y2="15"
-                        id="Path"
-                        stroke="#0C0310"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                      ></line>
-                      <line
-                        x1="9"
-                        y1="12"
-                        x2="15"
-                        y2="12"
-                        id="Path"
-                        stroke="#0C0310"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                      ></line>
-                    </g>
-                  </g>
-                </svg>
-                <span>Додати архів</span>
+          </div>
+
+          <div class="form_page_buttons fildset">
+            <div class="form_page_button">
+              <button
+                id="generate-klopotannya"
+                class="shlyah-btn disabled"
+                type="button"
+              >
+                Згенерувати лист-клопотання
+              </button>
+              <a
+                href="https://diia.gov.ua/services/pidpisannya-dokumentiv"
+                target="_blank"
+                id="pidpusaty-klopoyanya"
+                class="shlyah-btn disabled"
+                >Підписати згенерований лист-клопотання</a
+              >
+            </div>
+
+            <div class="form-alert">
+              <p class="warning">
+                УВАГА! ЛИСТ-КЛОПОТАННЯ ПОВИНЕН БУТИ ПІДПИСАНИЙ КЕРІВНИКОМ
+                ОРГАНІЗАЦІЇ, УСТАНОВИ ТОЩО
               </p>
-              <div class="file-added-wrapper display-none">
-                <p class="file-added">
+              <p class="warning">
+                УВАГА! ЯКЩО ЗАЯВА НЕ ГЕНЕРУЄТЬСЯ, ПЕРЕВІРТЕ ПРАВИЛЬНІСТЬ
+                ВВЕДЕНИХ ДАНИХ
+              </p>
+              <p>
+                Інструкція для підписання заяви КЕПом -
+                <a href="https://www.youtube.com/watch?v=hWrNI9chjHo"
+                  >переглянути</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <form class="pidpusanuy-lust-form">
+            <div class="pidpusanuy-lust-form__wrapper fildset">
+              <h2 class="fildset__title">Додайте підписаний лист-клопотання</h2>
+              <label
+                class="shliakh-form__input-label shliakh-form__input-label--file"
+              >
+                <input
+                  type="file"
+                  name="pidpusanuyLustFile"
+                  accept=".p7s, .asics, .asice"
+                  class="shliakh-form__input shliakh-form__input--file"
+                  required
+                />
+                <p class="add-file">
                   <svg
                     class="file-input-svg"
                     width="800px"
                     height="800px"
-                    viewBox="0 0 512 512"
+                    viewBox="0 0 24 24"
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                   >
-                    <title>success</title>
+                    <title>Add-Stroke</title>
                     <g
                       id="Page-1"
                       stroke="none"
@@ -509,190 +619,117 @@
                       fill="none"
                       fill-rule="evenodd"
                     >
-                      <g
-                        id="add-copy"
-                        fill="#000000"
-                        transform="translate(42.666667, 42.666667)"
-                      >
-                        <path
-                          d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
-                          id="Shape"
-                        ></path>
+                      <g id="Add-Stroke">
+                        <rect
+                          id="Rectangle"
+                          fill-rule="nonzero"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        ></rect>
+                        <circle
+                          id="Oval"
+                          stroke="#0C0310"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          cx="12"
+                          cy="12"
+                          r="9"
+                        ></circle>
+                        <line
+                          x1="12"
+                          y1="9"
+                          x2="12"
+                          y2="15"
+                          id="Path"
+                          stroke="#0C0310"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        ></line>
+                        <line
+                          x1="9"
+                          y1="12"
+                          x2="15"
+                          y2="12"
+                          id="Path"
+                          stroke="#0C0310"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                        ></line>
                       </g>
                     </g>
                   </svg>
-                  <span>Архів додано: </span>
-                  <span class="file-name"></span>
+                  <span>Додати файл</span>
                 </p>
-                <button class="input-delete-file">Видалити архів</button>
+                <div class="file-added-wrapper display-none">
+                  <p class="file-added">
+                    <svg
+                      class="file-input-svg"
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 512 512"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <title>success</title>
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <g
+                          id="add-copy"
+                          fill="#000000"
+                          transform="translate(42.666667, 42.666667)"
+                        >
+                          <path
+                            d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
+                            id="Shape"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <span>Файл додано: </span>
+                    <span class="file-name"></span>
+                  </p>
+                  <button class="input-delete-file">Видалити файл</button>
+                </div>
+                <p class="input-error"></p>
+              </label>
+              <div class="form-alert form-alert--margin-top">
+                <p>
+                  Допустимі розширення підписаних листів: .p7s .asics .asice
+                </p>
               </div>
-              <p class="input-error"></p>
-            </label>
-            <div class="form-alert form-alert--margin-top-minus">
-              <p>Допустимі розширення архівів: .zip .rar</p>
             </div>
           </form>
-        </div>
-      </div>
 
-      <div class="form_page_buttons fildset">
-        <div class="form_page_button">
-          <button
-            id="generate-klopotannya"
-            class="shlyah-btn disabled"
-            type="button"
-          >
-            Згенерувати лист-клопотання
-          </button>
-          <a
-            href="https://diia.gov.ua/services/pidpisannya-dokumentiv"
-            target="_blank"
-            id="pidpusaty-klopoyanya"
-            class="shlyah-btn disabled"
-            >Підписати згенерований лист-клопотання</a
-          >
-        </div>
-
-        <div class="form-alert">
-          <p class="warning">
-            УВАГА! ЛИСТ-КЛОПОТАННЯ ПОВИНЕН БУТИ ПІДПИСАНИЙ КЕРІВНИКОМ
-            ОРГАНІЗАЦІЇ, УСТАНОВИ ТОЩО
-          </p>
-          <p class="warning">
-            УВАГА! ЯКЩО ЗАЯВА НЕ ГЕНЕРУЄТЬСЯ, ПЕРЕВІРТЕ ПРАВИЛЬНІСТЬ ВВЕДЕНИХ
-            ДАНИХ
-          </p>
-          <p>
-            Інструкція для підписання заяви КЕПом -
-            <a href="https://www.youtube.com/watch?v=hWrNI9chjHo"
-              >переглянути</a
-            >
-          </p>
-        </div>
-      </div>
-
-      <form class="pidpusanuy-lust-form">
-        <div class="pidpusanuy-lust-form__wrapper fildset">
-          <h2 class="fildset__title">Додайте підписаний лист-клопотання</h2>
-          <label
-            class="shliakh-form__input-label shliakh-form__input-label--file"
-          >
-            <input
-              type="file"
-              name="pidpusanuyLustFile"
-              accept=".p7s, .asics, .asice"
-              class="shliakh-form__input shliakh-form__input--file"
-              required
-            />
-            <p class="add-file">
-              <svg
-                class="file-input-svg"
-                width="800px"
-                height="800px"
-                viewBox="0 0 24 24"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <title>Add-Stroke</title>
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g id="Add-Stroke">
-                    <rect
-                      id="Rectangle"
-                      fill-rule="nonzero"
-                      x="0"
-                      y="0"
-                      width="24"
-                      height="24"
-                    ></rect>
-                    <circle
-                      id="Oval"
-                      stroke="#0C0310"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      cx="12"
-                      cy="12"
-                      r="9"
-                    ></circle>
-                    <line
-                      x1="12"
-                      y1="9"
-                      x2="12"
-                      y2="15"
-                      id="Path"
-                      stroke="#0C0310"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                    ></line>
-                    <line
-                      x1="9"
-                      y1="12"
-                      x2="15"
-                      y2="12"
-                      id="Path"
-                      stroke="#0C0310"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                    ></line>
-                  </g>
-                </g>
-              </svg>
-              <span>Додати файл</span>
-            </p>
-            <div class="file-added-wrapper display-none">
-              <p class="file-added">
-                <svg
-                  class="file-input-svg"
-                  width="800px"
-                  height="800px"
-                  viewBox="0 0 512 512"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <title>success</title>
-                  <g
-                    id="Page-1"
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="add-copy"
-                      fill="#000000"
-                      transform="translate(42.666667, 42.666667)"
-                    >
-                      <path
-                        d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51296 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.153707,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51296 331.153707,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.43872,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.438933,384 213.333333,384 Z M293.669333,137.114453 L323.835947,167.281067 L192,299.66912 L112.916693,220.585813 L143.083307,190.4192 L192,239.335893 L293.669333,137.114453 Z"
-                        id="Shape"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-                <span>Файл додано: </span>
-                <span class="file-name"></span>
-              </p>
-              <button class="input-delete-file">Видалити файл</button>
-            </div>
-            <p class="input-error"></p>
-          </label>
-          <div class="form-alert form-alert--margin-top">
-            <p>Допустимі розширення підписаних листів: .p7s .asics .asice</p>
+          <div class="submit__wrapper">
+            <button id="shlikh-submit" class="shlyah-btn" type="button">
+              Надіслати
+            </button>
           </div>
         </div>
-      </form>
-
-      <div class="submit__wrapper">
-        <button id="shlikh-submit" class="shlyah-btn" type="button">
-          Надіслати
-        </button>
+      </div>
+      <div class="form_page_hint" style="width: 350px">
+        <div class="form_page_hint_info">
+          <div class="step_block" data-step="1" style="display: block">
+            <div class="form_page_hint_caption">
+              З правилами перетину державного кордону в умовах воєнного стану
+              можна ознайомитися за
+              <a
+                target="_blank"
+                href="https://www.kmu.gov.ua/news/kabinet-ministriv-ukrayini-zminiv-pravila-peretinu-kordonu-avtomobilnimi-pereviznikami"
+                >посиланням</a
+              >
+              👈
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
