@@ -81,10 +81,10 @@ generateBtn.addEventListener("click", async (e) => {
 
 submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  if (!checkForms()) {
-    submitBtn.classList.add("disabled");
-    return;
-  }
+  // if (!checkForms()) {
+  //   submitBtn.classList.add("disabled");
+  //   return;
+  // }
 
   const driversForm = document.querySelectorAll(".driver-form");
 
@@ -94,25 +94,34 @@ submitBtn.addEventListener("click", async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   const driversData = [];
+  const files = [];
 
   driversForm.forEach((form) => {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    if (data.declarationFile.size > 2048) {
+      files.push(data.declarationFile);
+    }
+    delete data.declarationFile;
 
     driversData.push(data);
   });
 
   const driversFiles = new FormData(driversFilesForm);
   const driversFilesData = Object.fromEntries(driversFiles.entries());
+  if (driversFilesData.driversFiles.size > 2048) {
+    files.push(driversFilesData.driversFiles);
+  }
 
   const pidpusanuyLust = new FormData(pidpusanuyLustForm);
   const pidpusanuyLustData = Object.fromEntries(pidpusanuyLust.entries());
+  if (pidpusanuyLustData.pidpusanuyLustFile.size > 2048) {
+    files.push(pidpusanuyLustData.pidpusanuyLustFile);
+  }
 
   const result = {
     ...data,
-    drivers: driversData,
-    driversFiles: driversFilesData,
-    pidpusanuyLust: pidpusanuyLustData,
+    drivers: JSON.stringify(driversData),
   };
 
   const resultEntries = Object.entries(result);
@@ -121,14 +130,15 @@ submitBtn.addEventListener("click", async (e) => {
     sendFormData.append(entry[0], entry[1]);
   });
 
+  files.forEach((file) => {
+    sendFormData.append("files", file);
+  });
+
   try {
     const response = await fetch(
-      "http://192.168.0.103:4080/api/api/shliakh/send-shliakh",
+      "http://localhost:4080/api/shliakh/send-shliakh",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
         body: sendFormData,
       }
     );
